@@ -1,13 +1,13 @@
-# Prompt for Jules: Build CloudShell-ownCloud
+# Prompt: Build ownShell-ownCloud
 
-You are building a GitHub project called **CloudShell-ownCloud**. Your task is to scaffold an ownCloud app that embeds a secure, web-based SSH terminal. Follow these steps precisely:
+You are building a GitHub project called **ownShell-ownCloud**. Your task is to scaffold an ownCloud app that embeds a secure, web-based SSH terminal. Follow these steps precisely:
 
 ## 1. Project Structure
-- Create a folder `CloudShell-ownCloud`
+- Create a folder `ownShell-ownCloud`
 - Inside, create subfolders: `appinfo`, `controller`, `templates`, `docs`, `css`, `js`
 
 ## 2. App Info
-- In `appinfo/info.xml`, define the app ID `cloudshell`, name, summary, description, version `0.1.0`, MIT license, author, and namespace.
+- In `appinfo/info.xml`, define the app ID `ownshell`, name, summary, description, version `0.1.0`, GNU-3 license, author, and namespace.
 - In `appinfo/routes.php`, define a route `/terminal` mapped to `TerminalController#index`.
 
 ## 3. Controller
@@ -15,10 +15,10 @@ You are building a GitHub project called **CloudShell-ownCloud**. Your task is t
 - Implement an `index()` method that returns a `TemplateResponse` for the terminal template.
 
 ## 4. Template
-- In `templates/terminal.php`, create a full-height iframe pointing to a placeholder backend terminal URL (e.g., `/apps/cloudshell/backend/`).
+- In `templates/terminal.php`, create a full-height iframe pointing to a placeholder backend terminal URL (e.g., `/apps/ownshell/backend/`).
 
 ## 5. Documentation
-- `README.md`: include project overview, planned features, roadmap, co-development note with Jules, and MIT license.
+- `README.md`: include project overview, planned features, roadmap, and GNU-3 license.
 - `docs/KICKSTARTER_PITCH.md`: outline the problem, solution, roadmap, and why users should back the project.
 
 ## 6. Placeholders
