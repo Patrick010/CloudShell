@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <info>
-  <id>cloudshell</id>
-  <name>CloudShell</name>
+  <id>ownshell</id>
+  <name>ownShell</name>
   <summary>SSH terminal inside ownCloud</summary>
   <description>Embed a web-based SSH terminal into ownCloud for admins and power users.</description>
   <version>0.1.0</version>
-  <licence>MIT</licence>
+  <licence>GNU-3</licence>
   <author>Your Name</author>
-  <namespace>CloudShell</namespace>
+  <namespace>ownShell</namespace>
 </info>
