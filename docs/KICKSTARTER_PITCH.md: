@@ -1,10 +1,10 @@
-# Kickstarter Pitch: CloudShell for ownCloud
+# Kickstarter Pitch: ownShell for ownCloud
 
 ## The Problem
 ownCloud is great for syncing files, but power users still need to SSH into servers while working. Right now, that means juggling multiple tools.
 
 ## The Solution
-CloudShell embeds a secure, browser-based SSH terminal directly into ownCloud. Seamless, native, and controlled.
+ownShell embeds a secure, browser-based SSH terminal directly into ownCloud. Seamless, native, and controlled.
 
 ## Roadmap
 - MVP: iframe-based SSH terminal
@@ -15,4 +15,3 @@ CloudShell embeds a secure, browser-based SSH terminal directly into ownCloud. S
 ## Why Back This
 - Adds a missing feature to ownCloud
 - Open-source, community-driven
-- Developed collaboratively with Jules (GPT-5)
