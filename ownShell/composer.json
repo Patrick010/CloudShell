@@ -1,0 +1,22 @@
+{
+  "name": "jules/ownshell",
+  "description": "Web-based SSH terminal for ownCloud",
+  "type": "owncloud-app",
+  "require": {
+    "php": ">=8.2",
+    "phpseclib/phpseclib": "^3.0",
+    "react/socket": "^1.12",
+    "cboden/ratchet": "^0.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "OCA\\OwnShell\\": "lib/"
+    }
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^2.2",
+    "friendsofphp/php-cs-fixer": "^3.86",
+    "phpstan/phpstan": "^2.1",
+    "vimeo/psalm": "^0.3.14"
+  }
+}

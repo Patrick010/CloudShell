@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<info>
+  <id>ownShell</id>
+  <name>ownShell</name>
+  <summary>Web-based SSH terminal for ownCloud</summary>
+  <description>Allows users to connect via SSH to LAN servers through ownCloud browser interface.</description>
+  <version>1.0.0</version>
+  <licence>AGPL</licence>
+  <author>Jules</author>
+  <namespace>OwnShell</namespace>
+  <category>tools</category>
+  <owncloud min-version="10.0" max-version="10.11"/>
+</info>
