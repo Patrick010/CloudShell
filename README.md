@@ -1,8 +1,8 @@
-# CloudShell for ownCloud
-CloudShell for ownCloud
+# ownShell for ownCloud
+ownShell for ownCloud
 
 ## Overview
-CloudShell is an ownCloud app that embeds a secure, web-based SSH terminal directly into the ownCloud UI.
+ownShell is an ownCloud app that embeds a secure, web-based SSH terminal directly into the ownCloud UI.
 
 ## Features (Planned)
 - In-browser SSH terminal (powered by ttyd or wetty)
@@ -17,7 +17,7 @@ CloudShell is an ownCloud app that embeds a secure, web-based SSH terminal direc
 4. Extensions: multi-server support, session logging
 
 ## Development Approach
-This project is co-developed with Jules (GPT-5). Iteration, scaffolding, and documentation are being built collaboratively in the open.
+Iteration, scaffolding, and documentation are being built collaboratively in the open.
 
 ## Get Involved
 - Star the repo
