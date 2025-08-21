@@ -1,0 +1,4 @@
+<div style="height:100%;">
+  <iframe src="/apps/cloudshell/backend/"
+          style="width:100%;height:100%;border:none;"></iframe>
+</div>
