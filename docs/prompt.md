@@ -26,7 +26,6 @@ You are building a GitHub project called **ownShell for ownCloud**. Your task is
 - Add empty `css` and `js` folders for future UI enhancements.
 
 ## 7. Output
-- Produce the full folder structure and all files ready to be zipped and uploaded to GitHub.
 - Do not implement the SSH backend yet; focus only on scaffolding, templates, and documentation for the MVP.
 
 > **Important:** Output all files with exact content, including directory paths, so that if someone runs it, they get a complete GitHub-ready scaffold.
