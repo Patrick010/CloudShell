@@ -1,0 +1,21 @@
+{
+    "name": "owncloud/ownshell",
+    "description": "An SSH client for ownCloud.",
+    "license": "AGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Jules",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "phpseclib/phpseclib": "^3.0",
+        "cboden/ratchet": "^0.4.4",
+        "react/socket": "^1.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "OCA\\\\OwnShell\\\\": "lib/"
+        }
+    }
+}

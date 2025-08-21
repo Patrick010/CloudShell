@@ -1,0 +1,51 @@
+#app-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 15px;
+}
+
+#ownshell-controls {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+#ownshell-controls label {
+    font-weight: bold;
+}
+
+#host-select, #connect-button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#connect-button {
+    background-color: #0070b8;
+    color: white;
+    cursor: pointer;
+}
+
+#connect-button:hover {
+    background-color: #00568f;
+}
+
+#connection-status {
+    font-style: italic;
+}
+
+#terminal {
+    flex-grow: 1;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* This is needed for the xterm.js viewport to size correctly */
+.xterm-viewport {
+    border-radius: 5px;
+}

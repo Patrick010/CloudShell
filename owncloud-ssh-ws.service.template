@@ -1,0 +1,15 @@
+[Unit]
+Description=ownCloud ownShell WebSocket Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+# IMPORTANT: Adjust the path to your ownCloud installation
+ExecStart=/usr/bin/php /var/www/owncloud/apps/ownShell/bin/ssh-ws-daemon.php
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<info>
+    <id>ownshell</id>
+    <name>ownShell</name>
+    <summary>An SSH terminal in ownCloud</summary>
+    <description>Provides a web-based SSH terminal within ownCloud, allowing users to connect to authorized machines.</description>
+    <version>1.0.0</version>
+    <license>agpl</license>
+    <author>Jules</author>
+    <namespace>OCA\OwnShell</namespace>
+    <dependencies>
+        <owncloud min-version="10.0" max-version="10.0" />
+    </dependencies>
+    <settings>
+        <admin>OCA\OwnShell\Settings\Admin</admin>
+    </settings>
+</info>
