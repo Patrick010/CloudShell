@@ -1,10 +1,11 @@
-# Prompt: Build ownShell-ownCloud
+# Prompt: Build ownShell plugin for ownCloud
 
-You are building a GitHub project called **ownShell-ownCloud**. Your task is to scaffold an ownCloud app that embeds a secure, web-based SSH terminal. Follow these steps precisely:
+You are building a GitHub project called **ownShell for ownCloud**. Your task is to scaffold an ownCloud app that embeds a secure, web-based SSH terminal. Follow these steps precisely:
 
-## 1. Project Structure
-- Create a folder `ownShell-ownCloud`
+## 1. Check if the Project Structure is already in place. If not, create it.
 - Inside, create subfolders: `appinfo`, `controller`, `templates`, `docs`, `css`, `js`
+
+## Check, verify and where missing or incomplete the following:
 
 ## 2. App Info
 - In `appinfo/info.xml`, define the app ID `ownshell`, name, summary, description, version `0.1.0`, GNU-3 license, author, and namespace.
@@ -29,3 +30,5 @@ You are building a GitHub project called **ownShell-ownCloud**. Your task is to 
 - Do not implement the SSH backend yet; focus only on scaffolding, templates, and documentation for the MVP.
 
 > **Important:** Output all files with exact content, including directory paths, so that if someone runs it, they get a complete GitHub-ready scaffold.
+
+Next step is: Propose a plan how to build this 
