@@ -17,11 +17,16 @@ These instructions assume you have received the `nextshell-1.0.0.zip` package fi
 
 ### Installation
 
-1.  Navigate to the **Apps** page in your Nextcloud instance.
-2.  In the app navigation, click on **+ Apps**.
-3.  At the top, find the button labeled **Install from file**.
-4.  Select the `nextshell-1.0.0.zip` file you downloaded and upload it.
-5.  Nextcloud will install the app. Once complete, find **NextShell** in your list of apps and click **Enable**.
+Installing NextShell involves manually placing the application code into your Nextcloud server's `apps` directory.
+
+1.  Download the latest release package (e.g., `nextshell-1.0.0.zip`).
+2.  Access your Nextcloud server's command line.
+3.  Navigate to your Nextcloud installation's root directory.
+4.  Extract the contents of the zip file into the `apps/` subdirectory. For example: `unzip /path/to/nextshell-1.0.0.zip -d /path/to/nextcloud/apps/`
+5.  This may create a directory named `nextshell-1.0.0`. If so, rename it to `nextshell`. The final path should be `nextcloud/apps/nextshell`.
+6.  Ensure the file permissions are correct. The web server user (e.g., `www-data`) must have read access to the app files. You can set this by running `chown -R www-data:www-data /path/to/nextcloud/apps/nextshell`.
+7.  In your Nextcloud UI, navigate to the **Apps** page.
+8.  Go to the **App bundles** section, find **NextShell**, and click **Enable**.
 
 ### First-Time Setup
 
