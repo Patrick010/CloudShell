@@ -2,32 +2,29 @@
 namespace OCA\nextshell\AppInfo;
 
 use OCP\AppFramework\App;
-use OCP\AppFramework\Bootstrap\IBootstrap;
-use OCP\AppFramework\Bootstrap\IBootContext;
-use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCA\nextshell\BackgroundJob\DaemonMonitor;
 use OCA\nextshell\Controller\PageController;
 use OCA\nextshell\Controller\SettingsApiController;
-use OCA\nextshell\Settings\AdminSettings;
 use OCA\nextshell\Settings\AdminSection;
-use OCA\nextshell\BackgroundJob\DaemonMonitor;
+use OCA\nextshell\Settings\AdminSettings;
 
-class Application extends App implements IBootstrap {
+class Application extends App {
     public const APP_ID = 'nextshell';
 
     public function __construct(array $urlParams = []) {
         parent::__construct(self::APP_ID, $urlParams);
-    }
 
-    public function register(IRegistrationContext $context): void {
+        $container = $this->getContainer();
+
         // Register settings panels
-        $context->registerService('OCA\nextshell\Settings\AdminSettings', function ($c) {
+        $container->registerService(AdminSettings::class, function ($c) {
             return new AdminSettings(
                 $c->get('AppName'),
                 $c->get('L10N'),
                 $c->get('AppConfig')
             );
         });
-        $context->registerService('OCA\nextshell\Settings\AdminSection', function ($c) {
+        $container->registerService(AdminSection::class, function ($c) {
             return new AdminSection(
                 $c->get('AppName'),
                 $c->get('L10N'),
@@ -36,14 +33,14 @@ class Application extends App implements IBootstrap {
         });
 
         // Register controllers
-        $context->registerService('PageController', function ($c) {
+        $container->registerService(PageController::class, function ($c) {
             return new PageController(
                 $c->get('AppName'),
                 $c->get('Request'),
                 $c->get('AppConfig')
             );
         });
-        $context->registerService('SettingsApiController', function ($c) {
+        $container->registerService(SettingsApiController::class, function ($c) {
             return new SettingsApiController(
                 $c->get('AppName'),
                 $c->get('Request'),
@@ -54,7 +51,7 @@ class Application extends App implements IBootstrap {
         });
 
         // Register background job
-        $context->registerService('OCA\nextshell\BackgroundJob\DaemonMonitor', function($c) {
+        $container->registerService(DaemonMonitor::class, function ($c) {
             return new DaemonMonitor(
                 $c->get('AppName'),
                 $c->get('AppConfig'),
@@ -63,9 +60,8 @@ class Application extends App implements IBootstrap {
                 $c->get('L10N')
             );
         });
-    }
 
-    public function boot(IBootContext $context): void {
-        $context->getJobList()->add('OCA\nextshell\BackgroundJob\DaemonMonitor');
+        $jobList = \OC::$server->getBackgroundJobList();
+        $jobList->add(DaemonMonitor::class);
     }
 }
