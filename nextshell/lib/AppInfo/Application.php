@@ -2,35 +2,32 @@
 namespace OCA\nextshell\AppInfo;
 
 use OCP\AppFramework\App;
-use OCP\AppFramework\Bootstrap\IBootable;
+use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IBootContext;
+use OCP\AppFramework\Bootstrap\IRegistrationContext;
 use OCA\nextshell\Controller\PageController;
 use OCA\nextshell\Controller\SettingsApiController;
 use OCA\nextshell\Settings\AdminSettings;
 use OCA\nextshell\Settings\AdminSection;
 use OCA\nextshell\BackgroundJob\DaemonMonitor;
 
-class Application extends App implements IBootable {
+class Application extends App implements IBootstrap {
     public const APP_ID = 'nextshell';
 
     public function __construct(array $urlParams = []) {
         parent::__construct(self::APP_ID, $urlParams);
     }
 
-    public function boot(IBootContext $context): void {
-        parent::boot($context);
-
-        $container = $this->getContainer();
-
+    public function register(IRegistrationContext $context): void {
         // Register settings panels
-        $container->registerService('OCA\nextshell\Settings\AdminSettings', function ($c) {
+        $context->registerService('OCA\nextshell\Settings\AdminSettings', function ($c) {
             return new AdminSettings(
                 $c->get('AppName'),
                 $c->get('L10N'),
                 $c->get('AppConfig')
             );
         });
-        $container->registerService('OCA\nextshell\Settings\AdminSection', function ($c) {
+        $context->registerService('OCA\nextshell\Settings\AdminSection', function ($c) {
             return new AdminSection(
                 $c->get('AppName'),
                 $c->get('L10N'),
@@ -39,14 +36,14 @@ class Application extends App implements IBootable {
         });
 
         // Register controllers
-        $container->registerService('PageController', function ($c) {
+        $context->registerService('PageController', function ($c) {
             return new PageController(
                 $c->get('AppName'),
                 $c->get('Request'),
                 $c->get('AppConfig')
             );
         });
-        $container->registerService('SettingsApiController', function ($c) {
+        $context->registerService('SettingsApiController', function ($c) {
             return new SettingsApiController(
                 $c->get('AppName'),
                 $c->get('Request'),
@@ -57,7 +54,7 @@ class Application extends App implements IBootable {
         });
 
         // Register background job
-        $container->registerService('OCA\nextshell\BackgroundJob\DaemonMonitor', function($c) {
+        $context->registerService('OCA\nextshell\BackgroundJob\DaemonMonitor', function($c) {
             return new DaemonMonitor(
                 $c->get('AppName'),
                 $c->get('AppConfig'),
@@ -66,6 +63,9 @@ class Application extends App implements IBootable {
                 $c->get('L10N')
             );
         });
+    }
+
+    public function boot(IBootContext $context): void {
         $context->getJobList()->add('OCA\nextshell\BackgroundJob\DaemonMonitor');
     }
 }

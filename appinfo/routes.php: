@@ -1,6 +1,0 @@
-<?php
-return [
-  'routes' => [
-    ['name' => 'terminal#index', 'url' => '/terminal', 'verb' => 'GET'],
-  ]
-];
