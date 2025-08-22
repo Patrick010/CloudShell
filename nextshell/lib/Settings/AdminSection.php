@@ -7,10 +7,12 @@ use OCP\IL10N;
 
 class AdminSection implements IIconSection {
 
+    private string $appName;
     private IL10N $l;
     private IURLGenerator $urlGenerator;
 
-    public function __construct(IL10N $l, IURLGenerator $urlGenerator) {
+    public function __construct(string $appName, IL10N $l, IURLGenerator $urlGenerator) {
+        $this->appName = $appName;
         $this->l = $l;
         $this->urlGenerator = $urlGenerator;
     }
@@ -33,6 +35,6 @@ class AdminSection implements IIconSection {
      * returns the relative path to the SVG icon
      */
     public function getIcon(): string {
-        return $this->urlGenerator->imagePath('nextshell', 'app.svg');
+        return $this->urlGenerator->imagePath($this->appName, 'app.svg');
     }
 }
