@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+  <id>nextshell</id>
+  <name>NextShell</name>
+  <summary>A simple web-based SSH terminal</summary>
+  <description>Allows users to connect via SSH through the Nextcloud browser interface. Managed entirely from the UI.</description>
+  <version>1.0.0</version>
+  <licence>agpl</licence>
+  <author>Patrick010</author>
+  <category>tools</category>
+  <dependencies>
+    <nextcloud min-version="30" max-version="31" />
+  </dependencies>
+  <navigation>
+      <route>
+          <name>page.index</name>
+          <url>/</url>
+      </route>
+      <name>SSH Terminal</name>
+      <icon>img/app.svg</icon>
+      <order>10</order>
+  </navigation>
+  <settings>
+      <admin>OCA\nextshell\Settings\AdminSettings</admin>
+      <admin-section>OCA\nextshell\Settings\AdminSection</admin-section>
+  </settings>
+</info>
